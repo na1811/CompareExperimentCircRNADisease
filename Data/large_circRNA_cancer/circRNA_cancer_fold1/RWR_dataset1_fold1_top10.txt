@@ -1,0 +1,10 @@
+(255,23) hsa_circ_0001801 glioma 0.0006119316020940502
+(130,43) circ-rad23b non-small cell lung cancer 0.0003236689210980162
+(271,20) hsa_circ_0003855 gastric cancer 0.00032596679861629345
+(191,43) circzfr non-small cell lung cancer 0.00015716121795609467
+(174,43) circtada2a-e6 non-small cell lung cancer 0.00015716121795609467
+(248,35) hsa_circ_0001658 lung adenocarcinoma 0.00029473422534210983
+(60,0) circfgfr1 acute myeloid leukemia 0.011909211348493596
+(266,1) hsa_circ_0002346 acute promyelocytic leukemia 0.02400404091881978
+(138,20) circrhot1 gastric cancer 0.0005138349248204351
+(65,10) circ-foxo3 clear cell renal cell carcinoma 0.00019216653564796426

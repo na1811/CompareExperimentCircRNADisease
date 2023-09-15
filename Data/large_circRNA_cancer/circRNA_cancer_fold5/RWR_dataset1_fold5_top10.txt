@@ -1,0 +1,8 @@
+(159,11) circrna-acap2 colon cancer 0.0005959738135068269
+(361,15) hsa_circ_0039569 endometrial cancer 0.00036718573668424585
+(189,27) circ-zeb1.33 hepatocellular carcinoma 0.00018535532283568587
+(222,27) hsa_circ_0000567 hepatocellular carcinoma 0.00018535532283568587
+(377,20) hsa_circ_0056618 gastric cancer 0.0002049204242608856
+(382,20) hsa_circ_0058092 gastric cancer 0.0002049204242608856
+(59,27) circfblim1 hepatocellular carcinoma 0.00018535532283568587
+(267,60) hsa_circ_0002453 triple-negative breast cancer 0.0005701778186646271
