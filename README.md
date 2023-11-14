@@ -9,8 +9,8 @@ Then, predict_matrix output will be saved as path: "./five_folds_prediction_outp
 
 Similarly, for each method and each different dataset, you need to run the following commands:
 Run RWR with 5 datasets as follows: 
-  bsub -o RWR_data1.output -e RWR_data1.error -n 8 "conda run -n base python RWR_data1.py"
-  bsub -o RWR_data2.output -e RWR_data2.error -n 8 "conda run -n base python RWR_data2.py"
+  + bsub -o RWR_data1.output -e RWR_data1.error -n 8 "conda run -n base python RWR_data1.py"
+  + bsub -o RWR_data2.output -e RWR_data2.error -n 8 "conda run -n base python RWR_data2.py"
   bsub -o RWR_data3.output -e RWR_data3.error -n 8 "conda run -n base python RWR_data3.py"
   bsub -o RWR_data4.output -e RWR_data4.error -n 8 "conda run -n base python RWR_data4.py"
   bsub -o RWR_data5.output -e RWR_data5.error -n 8 "conda run -n base python RWR_data5.py"
