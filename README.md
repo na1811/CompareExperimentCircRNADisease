@@ -11,30 +11,30 @@ Similarly, for each method and each different dataset, you need to run the follo
 Run RWR with 5 datasets as follows: 
   + bsub -o RWR_data1.output -e RWR_data1.error -n 8 "conda run -n base python RWR_data1.py"
   + bsub -o RWR_data2.output -e RWR_data2.error -n 8 "conda run -n base python RWR_data2.py"
-  bsub -o RWR_data3.output -e RWR_data3.error -n 8 "conda run -n base python RWR_data3.py"
-  bsub -o RWR_data4.output -e RWR_data4.error -n 8 "conda run -n base python RWR_data4.py"
-  bsub -o RWR_data5.output -e RWR_data5.error -n 8 "conda run -n base python RWR_data5.py"
+  + bsub -o RWR_data3.output -e RWR_data3.error -n 8 "conda run -n base python RWR_data3.py"
+  + bsub -o RWR_data4.output -e RWR_data4.error -n 8 "conda run -n base python RWR_data4.py"
+  + bsub -o RWR_data5.output -e RWR_data5.error -n 8 "conda run -n base python RWR_data5.py"
 
 Run CDLNLP with 5 datasets as follows: 
-  bsub -o CDLNLP_data1.output -e CDLNLP_data1.error -n 8 "conda run -n base python CDLNLP_data1.py"
-  bsub -o CDLNLP_data2.output -e CDLNLP_data2.error -n 8 "conda run -n base python CDLNLP_data2.py"
-  bsub -o CDLNLP_data3.output -e CDLNLP_data3.error -n 8 "conda run -n base python CDLNLP_data3.py"
-  bsub -o CDLNLP_data4.output -e CDLNLP_data4.error -n 8 "conda run -n base python CDLNLP_data4.py"
-  bsub -o CDLNLP_data5.output -e CDLNLP_data5.error -n 8 "conda run -n base python CDLNLP_data5.py"
+  + bsub -o CDLNLP_data1.output -e CDLNLP_data1.error -n 8 "conda run -n base python CDLNLP_data1.py"
+  + bsub -o CDLNLP_data2.output -e CDLNLP_data2.error -n 8 "conda run -n base python CDLNLP_data2.py"
+  + bsub -o CDLNLP_data3.output -e CDLNLP_data3.error -n 8 "conda run -n base python CDLNLP_data3.py"
+  + bsub -o CDLNLP_data4.output -e CDLNLP_data4.error -n 8 "conda run -n base python CDLNLP_data4.py"
+  + bsub -o CDLNLP_data5.output -e CDLNLP_data5.error -n 8 "conda run -n base python CDLNLP_data5.py"
 
 Run GMNN2CD with 5 datasets as follows: 
-  bsub -o GMNN2CD_data1.output -e GMNN2CD_data1.error -n 8 "conda run -n base python GMNN2CD_data1.py"
-  bsub -o GMNN2CD_data2.output -e GMNN2CD_data2.error -n 8 "conda run -n base python GMNN2CD_data2.py"
-  bsub -o GMNN2CD_data3.output -e GMNN2CD_data3.error -n 8 "conda run -n base python GMNN2CD_data3.py"
-  bsub -o GMNN2CD_data4.output -e GMNN2CD_data4.error -n 8 "conda run -n base python GMNN2CD_data4.py"
-  bsub -o GMNN2CD_data5.output -e GMNN2CD_data5.error -n 8 "conda run -n base python GMNN2CD_data5.py"
+  + bsub -o GMNN2CD_data1.output -e GMNN2CD_data1.error -n 8 "conda run -n base python GMNN2CD_data1.py"
+  + bsub -o GMNN2CD_data2.output -e GMNN2CD_data2.error -n 8 "conda run -n base python GMNN2CD_data2.py"
+  + bsub -o GMNN2CD_data3.output -e GMNN2CD_data3.error -n 8 "conda run -n base python GMNN2CD_data3.py"
+  + bsub -o GMNN2CD_data4.output -e GMNN2CD_data4.error -n 8 "conda run -n base python GMNN2CD_data4.py"
+  + bsub -o GMNN2CD_data5.output -e GMNN2CD_data5.error -n 8 "conda run -n base python GMNN2CD_data5.py"
 
 Run KATZHCDA with 5 datasets as follows: 
-  bsub -o KATZHCDA_data1.output -e KATZHCDA_data1.error -n 8 "conda run -n base python KATZHCDA_data1.py"
-  bsub -o KATZHCDA_data2.output -e KATZHCDA_data2.error -n 8 "conda run -n base python KATZHCDA_data2.py"
-  bsub -o KATZHCDA_data3.output -e KATZHCDA_data3.error -n 8 "conda run -n base python KATZHCDA_data3.py"
-  bsub -o KATZHCDA_data4.output -e KATZHCDA_data4.error -n 8 "conda run -n base python KATZHCDA_data4.py"
-  bsub -o KATZHCDA_data5.output -e KATZHCDA_data5.error -n 8 "conda run -n base python KATZHCDA_data5.py"
+  + bsub -o KATZHCDA_data1.output -e KATZHCDA_data1.error -n 8 "conda run -n base python KATZHCDA_data1.py"
+  + bsub -o KATZHCDA_data2.output -e KATZHCDA_data2.error -n 8 "conda run -n base python KATZHCDA_data2.py"
+  + bsub -o KATZHCDA_data3.output -e KATZHCDA_data3.error -n 8 "conda run -n base python KATZHCDA_data3.py"
+  + bsub -o KATZHCDA_data4.output -e KATZHCDA_data4.error -n 8 "conda run -n base python KATZHCDA_data4.py"
+  + bsub -o KATZHCDA_data5.output -e KATZHCDA_data5.error -n 8 "conda run -n base python KATZHCDA_data5.py"
 
 + The way run RNMFLP method:
 Go to "RNMFLP main" folder, run file "fivefols.m"
