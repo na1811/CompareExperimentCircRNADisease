@@ -5,7 +5,6 @@
 @Description: 这个是根据circRNA-disease关系矩阵，计算高斯相似性，
 构成circRNA-circRNA关系矩阵，disease-disease关系矩阵
 '''
-import h5py
 import numpy as np
 
 
@@ -56,4 +55,3 @@ class MakeSimilarityMatrix(object):
         circ_sim_matrix = circ_similarity(circrna_disease_matrix)
         dis_sim_matrix = dis_similarity(circrna_disease_matrix.transpose())
         return circ_sim_matrix,dis_sim_matrix
-

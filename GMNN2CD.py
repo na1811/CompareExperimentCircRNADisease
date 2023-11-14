@@ -228,7 +228,6 @@ if __name__=="__main__":
     # with h5py.File('./Data/circad/circrna_disease.h5', 'r') as hf:
     #     circrna_disease_matrix = hf['infor'][:]
 
-    # 划分训练集为五份为后面五折实验做准备
     index_tuple = (np.where(circrna_disease_matrix == 1))
     one_list = list(zip(index_tuple[0], index_tuple[1]))
     random.shuffle(one_list)

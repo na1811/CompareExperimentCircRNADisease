@@ -308,9 +308,8 @@ if __name__=="__main__":
             ymat = resi.detach().numpy()
 
         S = ymat
-        ############这里应该要改############
-
-        prediction_matrix = S#得到预测矩阵，这个预测矩阵中的数值为0-1之间的数
+        prediction_matrix = S
+        
         aa = prediction_matrix.shape
         bb = roc_circrna_disease_matrix.shape
         zero_matrix = np.zeros((prediction_matrix.shape[0], prediction_matrix.shape[1]))
