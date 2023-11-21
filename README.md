@@ -44,5 +44,5 @@ The way run RNMFLP method:
   Then, save each predict_scores matrix corresponding to each dataset into the path "./five_folds_prediction_output/Dataset{dataset}/RNMFLP_result_data{dataset}.csv" for step 2
 
 ## Step 2: Combine 5 predict_matrix for evaluation 
-Run file "Integrated Approach - Fivefolds.ipynb"
+Run file "IntegratedApproachFivefolds.py" => The result will be printed
 Note that for each different Dataset, you need to edit the comments in the file "Integrated Approach - Fivefolds.ipynb" to run the correct dataset.
