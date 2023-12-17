@@ -44,22 +44,6 @@ if __name__ == '__main__':
     all_accuracy = []
     all_F1 = []
 
-    # cancer_dict = {'glioma': 7, 'bladder cancer':9, 'breast cancer': 10,'cervical cancer': 53,'cervical carcinoma': 64,'colorectal cancer':11,'gastric cancer':19}
-
-    # cancer_dict = {'glioma': 23, 'bladder cancer': 2, 'breast cancer': 4, 'cervical cancer': 6,
-    #                 'colorectal cancer': 12, 'gastric cancer': 20}
-
-    # cancer_dict = {'glioma': 20, 'bladder cancer': 19, 'breast cancer': 6, 'cervical cancer': 16,
-    #                 'colorectal cancer': 1, 'gastric cancer': 0}
-
-    # # circ2Traits
-    cancer_dict = {'bladder cancer': 58, 'breast cancer':46, 'glioma':89, 'glioblastoma':88,
-                   'glioblastoma multiforme':59, 'cervical cancer':23, 'colorectal cancer':6, 'gastric cancer':15}
-
-    # circad
-    # cancer_dict = {'bladder cancer':94, 'breast cancer':53, 'triple-negative breast cancer':111, 'gliomas':56, 'glioma':76,
-    #                 'cervical cancer':65, 'colorectal cancer':143, 'gastric cancer':28}
-
     # denovo start
     for i in range(circrna_disease_matrix.shape[1]):
         new_circrna_disease_matrix = circrna_disease_matrix.copy()
@@ -77,4 +61,4 @@ if __name__ == '__main__':
     prediction_matrix_real = prediction_matrix.real
     result = pd.DataFrame(prediction_matrix_real)
     result
-    np.savetxt("./denovo_output/Dataset4/CDLNLP_result_data4.csv", result, delimiter=",")
+    np.savetxt("./denovo_prediction_output/Dataset4/CDLNLP_result_data4.csv", result, delimiter=",")

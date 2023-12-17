@@ -217,11 +217,11 @@ if __name__=="__main__":
     # with h5py.File('./Data/circRNA_disease_from_circRNADisease/association.h5', 'r') as hf:
     #     circrna_disease_matrix = hf['infor'][:]
 
-    with h5py.File('./Data/circ2Traits/circRNA_disease.h5', 'r') as hf:
-        circrna_disease_matrix = hf['infor'][:]
-
-    # with h5py.File('./Data/circad/circrna_disease.h5', 'r') as hf:
+    # with h5py.File('./Data/circ2Traits/circRNA_disease.h5', 'r') as hf:
     #     circrna_disease_matrix = hf['infor'][:]
+
+    with h5py.File('./Data/circad/circrna_disease.h5', 'r') as hf:
+        circrna_disease_matrix = hf['infor'][:]
 
     all_tpr = []
     all_fpr = []
@@ -264,4 +264,4 @@ if __name__=="__main__":
     prediction_matrix_real = prediction_matrix.real
     result = pd.DataFrame(prediction_matrix_real)
     result
-    np.savetxt("./denovo_prediction_output/Dataset4/GMNN2CD_result_data4.csv", result, delimiter=",")
+    np.savetxt("./denovo_prediction_output/Dataset5/GMNN2CD_result_data5.csv", result, delimiter=",")

@@ -27,14 +27,14 @@ if __name__ == '__main__':
     # with h5py.File('./Data/disease-circRNA.h5', 'r') as hf:
     #     circrna_disease_matrix = hf['infor'][:]
 
-    # with h5py.File('./Data/circRNA_cancer/circRNA_cancer.h5', 'r') as hf:
-    #     circrna_disease_matrix = hf['infor'][:]
+    with h5py.File('./Data/circRNA_cancer/circRNA_cancer.h5', 'r') as hf:
+        circrna_disease_matrix = hf['infor'][:]
 
     # with h5py.File('./Data/circRNA_disease_from_circRNADisease/association.h5', 'r') as hf:
     #     circrna_disease_matrix = hf['infor'][:]
 
-    with h5py.File('./Data/circ2Traits/circRNA_disease.h5', 'r') as hf:
-        circrna_disease_matrix = hf['infor'][:]
+    # with h5py.File('./Data/circ2Traits/circRNA_disease.h5', 'r') as hf:
+    #     circrna_disease_matrix = hf['infor'][:]
 
     # with h5py.File('./Data/circad/circrna_disease.h5', 'r') as hf:
     #     circrna_disease_matrix = hf['infor'][:]
@@ -65,4 +65,4 @@ if __name__ == '__main__':
     prediction_matrix_real = prediction_matrix.real
     result = pd.DataFrame(prediction_matrix_real)
     result
-    np.savetxt("./denovo_prediction_output/Dataset4/KATZHCDA_result_data4.csv", result, delimiter=",")
+    np.savetxt("./denovo_prediction_output/Dataset2/KATZHCDA_result_data2.csv", result, delimiter=",")
