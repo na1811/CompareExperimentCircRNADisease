@@ -3,19 +3,12 @@ import math
 import random
 import h5py
 import numpy as np
-import pandas as pd
+import LNLP_method
 import sortscore
 import matplotlib.pyplot as plt
+import pandas as pd
 from MakeSimilarityMatrix import MakeSimilarityMatrix
 
-
-def SC(relmatrix, circ_gipsim_matrix):
-
-    return  circ_gipsim_matrix
-
-def SD(relmatrix, dis_gipsim_matrix):
-
-    return dis_gipsim_matrix
 
 def find_key(i, cancer_dict):
     name = list(cancer_dict.keys())[list(cancer_dict.values()).index(i)]
@@ -24,8 +17,12 @@ def find_key(i, cancer_dict):
 
 
 if __name__ == '__main__':
-    # with h5py.File('./Data/disease-circRNA.h5', 'r') as hf:
-    #     circrna_disease_matrix = hf['infor'][:]
+    alpha = 0.1
+    neighbor_rate = 0.9
+    weight = 1.0
+
+    with h5py.File('./Data/disease-circRNA.h5', 'r') as hf:
+        circrna_disease_matrix = hf['infor'][:]
 
     # with h5py.File('./Data/circRNA_cancer/circRNA_cancer.h5', 'r') as hf:
     #     circrna_disease_matrix = hf['infor'][:]
@@ -33,11 +30,12 @@ if __name__ == '__main__':
     # with h5py.File('./Data/circRNA_disease_from_circRNADisease/association.h5', 'r') as hf:
     #     circrna_disease_matrix = hf['infor'][:]
 
-    with h5py.File('./Data/circ2Traits/circRNA_disease.h5', 'r') as hf:
-        circrna_disease_matrix = hf['infor'][:]
+    # with h5py.File('./Data/circ2Traits/circRNA_disease.h5', 'r') as hf:
+    #     circrna_disease_matrix = hf['infor'][:]
 
     # with h5py.File('./Data/circad/circrna_disease.h5', 'r') as hf:
     #     circrna_disease_matrix = hf['infor'][:]
+
 
     all_tpr = []
     all_fpr = []
@@ -50,19 +48,17 @@ if __name__ == '__main__':
     for i in range(circrna_disease_matrix.shape[1]):
         new_circrna_disease_matrix = circrna_disease_matrix.copy()
         roc_circrna_disease_matrix = circrna_disease_matrix.copy()
-        if ((False in (new_circrna_disease_matrix[:, i] == 0)) == False):
+        if ((False in (new_circrna_disease_matrix[:,i]==0))==False):
             continue
-        new_circrna_disease_matrix[:, i] = 0
+        new_circrna_disease_matrix[:,i] = 0
 
         rel_matrix = new_circrna_disease_matrix
-        make_sim_matrix = MakeSimilarityMatrix(rel_matrix)
-        circ_gipsim_matrix, dis_gipsim_matrix = make_sim_matrix.circsimmatrix, make_sim_matrix.dissimmatrix
-        circ_sim_matrix = SC(rel_matrix, circ_gipsim_matrix)
-        dis_sim_matrix = SD(rel_matrix, dis_gipsim_matrix)
 
-        prediction_matrix = 0.01*rel_matrix + 0.01**2*(np.dot(circ_sim_matrix, rel_matrix)+ np.dot(rel_matrix, dis_sim_matrix))
+
+        prediction_matrix = LNLP_method.linear_neighbor_predict(rel_matrix, alpha, neighbor_rate, weight)
+        prediction_matrix = prediction_matrix.A
 
     prediction_matrix_real = prediction_matrix.real
     result = pd.DataFrame(prediction_matrix_real)
     result
-    np.savetxt("./denovo_prediction_output/Dataset4/KATZHCDA_result_data4.csv", result, delimiter=",")
+    np.savetxt("./denovo_prediction_output/Dataset1/CDLNLP_result_data1.csv", result, delimiter=",")
