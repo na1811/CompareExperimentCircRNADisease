@@ -51,6 +51,7 @@ if __name__ == '__main__':
     all_accuracy = []
     all_F1 = []
 
+    count = 1
     fold = 1
     for i in range(0, len(one_list), split):
         test_index = one_list[i:i + split]
@@ -67,8 +68,8 @@ if __name__ == '__main__':
         dis_sim_matrix = SD(rel_matrix, dis_gipsim_matrix)
 
         prediction_matrix = 0.01*rel_matrix + 0.01**2*(np.dot(circ_sim_matrix, rel_matrix)+ np.dot(rel_matrix, dis_sim_matrix))
-
-    prediction_matrix_real = prediction_matrix.real
-    result = pd.DataFrame(prediction_matrix_real)
-    result
-    np.savetxt("./five_folds_prediction_output/Dataset1/KATZHCDA_result_data1.csv", result, delimiter=",")
+        
+        prediction_matrix_real = prediction_matrix.real
+        result = pd.DataFrame(prediction_matrix_real)
+        np.savetxt("./five_folds_prediction_output/Dataset1/KATZHCDA/KATZHCDA" + str(count) + ".csv", result, delimiter=",")
+        count += 1

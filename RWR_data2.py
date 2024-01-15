@@ -92,6 +92,8 @@ if __name__ == '__main__':
     all_precision = []
     all_accuracy = []
     all_F1 = []
+    
+    count = 1
 
     # 5-fold start
     fold = 1
@@ -137,8 +139,7 @@ if __name__ == '__main__':
             t += 1
 
         prediction_matrix = pted[disnum:,:]
-        
-    prediction_matrix_real = prediction_matrix.real
-    result = pd.DataFrame(prediction_matrix_real)
-    result
-    np.savetxt("./five_folds_prediction_output/Dataset2/RWR_result_data2.csv", result, delimiter=",")
+        prediction_matrix_real = prediction_matrix.real
+        result = pd.DataFrame(prediction_matrix_real)
+        np.savetxt("./five_folds_prediction_output/Dataset2/RWR/RWR" + str(count) + ".csv", result, delimiter=",")
+        count += 1

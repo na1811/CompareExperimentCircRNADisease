@@ -42,15 +42,6 @@ import pickle
 with h5py.File('./Data/circad/circrna_disease.h5', 'r') as hf:
     circrna_disease_matrix = hf['infor'][:]
 
-# Đọc dữ liệu từ các file CSV
-rnmflp_matrix = np.genfromtxt('./five_folds_prediction_output/Dataset5/RNMFLP_result_data5.csv', delimiter=',')
-katzh_matrix = np.genfromtxt('./five_folds_prediction_output/Dataset5/KATZHCDA_result_data5.csv', delimiter=',')
-gmnn_matrix = np.genfromtxt('./five_folds_prediction_output/Dataset5/GMNN2CD_result_data5.csv', delimiter=',')
-rwr_matrix = np.genfromtxt('./five_folds_prediction_output/Dataset5/RWR_result_data5.csv', delimiter=',')
-cdlnlp_matrix = np.genfromtxt('./five_folds_prediction_output/Dataset5/CD-LNLP_result_data5.csv', delimiter=',')
-
-prediction_matrix = (gmnn_matrix + rwr_matrix + rnmflp_matrix + katzh_matrix + cdlnlp_matrix)/5
-
 # Edit comment for datasets you want to run
 # Dataset1
 #file_name = "saved_variables_data1.pkl"
@@ -80,10 +71,51 @@ all_precision = []
 all_accuracy = []
 all_F1 = []
 
+count = 1
 # 5-fold start
 for i in range(0, len(one_list), split):
     test_index = one_list[i:i + split]
     new_circrna_disease_matrix = circrna_disease_matrix.copy()
+    
+    # Edit comment for datasets you want to run
+    
+    # Dataset1
+    # rnmflp_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset1/RNMFLP/RNMFLP" + str(count) + ".csv", delimiter=',')
+    # katzh_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset1/KATHZHCDA/KATHZHCDA" + str(count) + ".csv", delimiter=',')
+    # gmnn_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset1/GMNN2CD/GMNN2CD" + str(count) + ".csv", delimiter=',')
+    # rwr_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset1/RWR/RWR" + str(count) + ".csv", delimiter=',')
+    # cdlnlp_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset1/CDLNLP/CDLNLP" + str(count) + ".csv", delimiter=',')
+    
+    # Dataset2
+    # rnmflp_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset2/RNMFLP/RNMFLP" + str(count) + ".csv", delimiter=',')
+    # katzh_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset2/KATHZHCDA/KATHZHCDA" + str(count) + ".csv", delimiter=',')
+    # gmnn_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset2/GMNN2CD/GMNN2CD" + str(count) + ".csv", delimiter=',')
+    # rwr_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset2/RWR/RWR" + str(count) + ".csv", delimiter=',')
+    # cdlnlp_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset2/CDLNLP/CDLNLP" + str(count) + ".csv", delimiter=',')
+    
+    # Dataset3
+    # rnmflp_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset3/RNMFLP/RNMFLP" + str(count) + ".csv", delimiter=',')
+    # katzh_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset3/KATHZHCDA/KATHZHCDA" + str(count) + ".csv", delimiter=',')
+    # gmnn_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset3/GMNN2CD/GMNN2CD" + str(count) + ".csv", delimiter=',')
+    # rwr_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset3/RWR/RWR" + str(count) + ".csv", delimiter=',')
+    # cdlnlp_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset3/CDLNLP/CDLNLP" + str(count) + ".csv", delimiter=',')
+    
+    # Dataset4
+    # rnmflp_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset4/RNMFLP/RNMFLP" + str(count) + ".csv", delimiter=',')
+    # katzh_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset4/KATHZHCDA/KATHZHCDA" + str(count) + ".csv", delimiter=',')
+    # gmnn_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset4/GMNN2CD/GMNN2CD" + str(count) + ".csv", delimiter=',')
+    # rwr_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset4/RWR/RWR" + str(count) + ".csv", delimiter=',')
+    # cdlnlp_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset4/CDLNLP/CDLNLP" + str(count) + ".csv", delimiter=',')
+    
+    # Dataset5
+    rnmflp_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset5/RNMFLP/RNMFLP" + str(count) + ".csv", delimiter=',')
+    katzh_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset5/KATHZHCDA/KATHZHCDA" + str(count) + ".csv", delimiter=',')
+    gmnn_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset5/GMNN2CD/GMNN2CD" + str(count) + ".csv", delimiter=',')
+    rwr_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset5/RWR/RWR" + str(count) + ".csv", delimiter=',')
+    cdlnlp_matrix = np.genfromtxt("./five_folds_prediction_output/Dataset5/CDLNLP/CDLNLP" + str(count) + ".csv", delimiter=',')
+    
+    prediction_matrix = (gmnn_matrix + rwr_matrix + katzh_matrix + cdlnlp_matrix + rnmflp_matrix)/5
+    count += 1
     
     for index in test_index:
         new_circrna_disease_matrix[index[0], index[1]] = 0

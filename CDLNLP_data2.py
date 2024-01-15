@@ -45,6 +45,7 @@ if __name__ == '__main__':
     all_accuracy = []
     all_F1 = []
 
+    count = 1
     # 5-fold start
     fold = 1
     for i in range(0, len(one_list), split):
@@ -60,7 +61,7 @@ if __name__ == '__main__':
         prediction_matrix = LNLP_method.linear_neighbor_predict(rel_matrix, alpha, neighbor_rate, weight)
         prediction_matrix = prediction_matrix.A
 
-    prediction_matrix_real = prediction_matrix.real
-    result = pd.DataFrame(prediction_matrix_real)
-    result
-    np.savetxt("./five_folds_prediction_output/Dataset2/CDLNLP_result_data2.csv", result, delimiter=",")
+        prediction_matrix_real = prediction_matrix.real
+        result = pd.DataFrame(prediction_matrix_real)
+        np.savetxt("./five_folds_prediction_output/Dataset2/CDLNLP/CDLNLP" + str(count) + ".csv", result, delimiter=",")
+        count += 1

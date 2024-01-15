@@ -219,6 +219,7 @@ if __name__=="__main__":
     all_accuracy = []
     all_F1 = []
 
+    count = 1
     # 5-fold start
     for i in range(0, len(one_list), split):
         test_index = one_list[i:i + split]
@@ -252,7 +253,7 @@ if __name__=="__main__":
         S = ymat     
         prediction_matrix = S
     
-    prediction_matrix_real = prediction_matrix.real
-    result = pd.DataFrame(prediction_matrix_real)
-    result
-    np.savetxt("./five_folds_prediction_output/Dataset4/GMNN2CD_result_data4.csv", result, delimiter=",")
+        prediction_matrix_real = prediction_matrix.real
+        result = pd.DataFrame(prediction_matrix_real)
+        np.savetxt("./five_folds_prediction_output/Dataset4/GMNN2CD/GMNN2CD" + str(count) + ".csv", result, delimiter=",")
+        count += 1
