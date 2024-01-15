@@ -5,6 +5,7 @@
 + The way to run the following 4 methods is similar: RWR, CDLNLP, GMNN2CD, KATZHCDA
   
 If you want to run RWR with Dataset 1, use the command: bsub -o RWR_data1.output -e RWR_data1.error -n 8 "conda run -n base python RWR_data1.py". 
+
 Note that before running, you need to check that you have the correct path to store prediction_matrix. For example, when you run the file "RWR_data1.py", the following output storage path is needed: 
 "./five_folds_prediction_output/Dataset1/RWR". Please check the code file "RWR_data1.py" for more clarity!
 
