@@ -42,7 +42,7 @@ Run KATZHCDA with 5 datasets as follows:
   + bsub -o KATZHCDA_data5.output -e KATZHCDA_data5.error -n 8 "conda run -n base python KATZHCDA_data5.py"
 
 The way run RNMFLP method:
-+ Go to "RNMFLP main" folder, run file "fivefols.m"
++ Go to "RNMFLP main" folder, run file "fivefols.m".
   Note that for each different Dataset, you need to edit the comments in the file "fivefols.m" to run the correct dataset.
   
   Then, save each predict_scores matrix with the names RNMFLP1, RNMFLP2, RNMFLP3, RNMFLP4, RNMFLP5 respectively according to the folds and corresponding to each data set into the path 
