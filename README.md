@@ -44,6 +44,7 @@ Run KATZHCDA with 5 datasets as follows:
 The way run RNMFLP method:
 + Go to "RNMFLP main" folder, run file "fivefols.m"
   Note that for each different Dataset, you need to edit the comments in the file "fivefols.m" to run the correct dataset.
+  
   Then, save each predict_scores matrix with the names RNMFLP1, RNMFLP2, RNMFLP3, RNMFLP4, RNMFLP5 respectively according to the folds and corresponding to each data set into the path 
   "./five_folds_prediction_output/Dataset{dataset}/RNMFLP/RNMFLP{fold}.csv" for step 2
 
