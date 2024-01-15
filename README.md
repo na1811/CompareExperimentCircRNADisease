@@ -1,12 +1,14 @@
 # Five methods: RWR, CDLNLP, GMNN2CD, KATZHCDA, RNMFLP
 
-# Run five-folds
+# Run five-folds (Update 15/01/2024)
 ## Step 1: Run each method with each dataset to get predict_matrix 
 + The way to run the following 4 methods is similar: RWR, CDLNLP, GMNN2CD, KATZHCDA
   
 If you want to run RWR with Dataset 1, use the command: bsub -o RWR_data1.output -e RWR_data1.error -n 8 "conda run -n base python RWR_data1.py"
+Note that before running, you need to check that you have the correct path to store prediction_matrix. For example, when you run the file "RWR_data1.py", the following output storage path is needed: 
+"./five_folds_prediction_output/Dataset1/RWR". Please check the code file "RWR_data1.py" for more clarity!
 
-Then, predict_matrix output will be saved as path: "./five_folds_prediction_output/Dataset1/RWR_result_data1.csv"
+After that, predict_matrix will be saved into 5 files corresponding to the folds according to the following directory path: "./5_folds_prediction_output/Dataset1/RWR"
 
 Similarly, for each method and each different dataset, you need to run the following commands:
 
@@ -41,7 +43,8 @@ Run KATZHCDA with 5 datasets as follows:
 The way run RNMFLP method:
 + Go to "RNMFLP main" folder, run file "fivefols.m"
   Note that for each different Dataset, you need to edit the comments in the file "fivefols.m" to run the correct dataset.
-  Then, save each predict_scores matrix corresponding to each dataset into the path "./five_folds_prediction_output/Dataset{dataset}/RNMFLP_result_data{dataset}.csv" for step 2
+  Then, save each predict_scores matrix with the names RNMFLP1, RNMFLP2, RNMFLP3, RNMFLP4, RNMFLP5 respectively according to the folds and corresponding to each data set into the path 
+  "./five_folds_prediction_output/Dataset{dataset}/RNMFLP/RNMFLP{fold}.csv" for step 2
 
 ## Step 2: Combine 5 predict_matrix for evaluation 
 Run file "IntegratedApproachFivefolds.py" => The result will be printed
